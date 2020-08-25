@@ -55,30 +55,12 @@ def load_data(directory):
 def main():
     if len(sys.argv) > 2:
         sys.exit("Usage: python degrees.py [directory]")
-    # directory = sys.argv[1] if len(sys.argv) == 2 else "large"
-    directory = "large"
+    directory = sys.argv[1] if len(sys.argv) == 2 else "large"
 
     # Load data from files into memory
     print("Loading data...")
     load_data(directory)
     print("Data loaded.")
-
-    # names_a = []
-    # with open("testing.csv") as a:
-    #     reader_a = csv.DictReader(a)
-    #     for row_a in reader_a:
-    #         names_a.append(row_a["name"])
-    
-    # for k in names_a:
-    #     for j in names_a:
-    #         source = person_id_for_name(k)
-    #         print("Name: "+k)
-    #         if source is None:
-    #             sys.exit("Person not found")
-    #         target = person_id_for_name(j)
-    #         print("Name: "+j)
-    #         if target is None:
-    #             sys.exit("Person not found")
             
     source = person_id_for_name(input("Name: "))
     if source is None:
