@@ -1,28 +1,13 @@
 # Degrees-of-separation-AI
-AI Search that
+Search algorithm that implements breadth-first-search to find the closest connection between two nodes in a tree.
 
 ## About
-About two years ago, when I had just started learning Python, I wrote a tic-tac-toe game [Collins1738/Tic-Tac-Toe](https://github.com/Collins1738/Tic-Tac-Toe), which was really huge for me. Now I have taken a big step further and written an Artificial Intelligence (AI) software to optimally play tic-tac-toe.
+[Six Degrees of Separation](https://en.wikipedia.org/wiki/Six_degrees_of_separation) is a concept that all people are at most six social connections away from each other. This is the concept used in the [Six Degrees of Kevin Bacon](https://en.wikipedia.org/wiki/Six_Degrees_of_Kevin_Bacon) game where someone names an actor and some other person tries to find a path with at most six actor-movie connections with Kevin Bacon.
+In this project, you could put in the names of two actors and the algorithm uses the IMDB movies and actors database to find the shortest movie-actor connetion between the two actors.
 
 ## Description
-This AI is able to find the optimal next move in any position in a tic-tac-toe game
-making it entirely unbeatable.
-The AI when playing against humans would either draw or capitalize on a bad move made by the human, and win the game.
-It's main focus is to play the best move that would make sure it never loses, and wins when bad moves are played by opposing player.
+This algorithm is able to form a huge graph of actors connected through movies they acted in. The algorithm is then able to find the shortest connection between two actors (nodes) in the tree/graph. The data of actors and movies is gotten from the IMDB movies-actors database.
 
-## Minimax
-This AI implements Minimax 
-Minimax is a decision making strategy where the AI makes a choice based on the opponent best choice.
-The AI finds an optimal choice by recursively finding the opponents optimal choice if it were to make an optimal choice based on the opponent making an optimal choice...that is based on the AI's optimal choice...(and that is how the recursive pattern is formed)
-It finds the minimum of the maximum choices made by the opposing player
-A score is used to rank the choices; a low score signifying a good move for the AI and a high score signifying a good move for the opposing player
-
-## TODO:
-### Optimal, and fastest
-Currently, when a bad move is played by the human, the AI plays any move that would lead it to win the game.
-Sometimes though, the move would make the AI win the game in 2 moves instead of winning the game immediately. Winning is assured but the faster win isn't taken into account.
-I plan on adding a secondary score that ranks faster wins over slower wins to allow the AI to play the optimal AND FASTER winning move!
-
-## Installing 
-Run pip3 install -r requirements.txt to install the required Python package (pygame) for the project. Then run Python3 runner.py to start the game
+## Run 
+Run `Python3 degrees.py large` to run the program with the real IMDB database, or Run `Python3 degrees.py small` to run with a smaller and more testable database.
 
